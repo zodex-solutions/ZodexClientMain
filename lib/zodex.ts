@@ -206,7 +206,7 @@ export const getSectionContent = (
   key: string,
 ): SectionContent | undefined => sections.find((section) => section.section_key === key);
 
-const defaultApiBaseUrl = "http://127.0.0.1:8008/api/v1";
+const defaultApiBaseUrl = "https://zodex.in/api/v1";
 
 export const getApiBaseUrl = () =>
   (process.env.NEXT_PUBLIC_ZODEX_API_URL || defaultApiBaseUrl).replace(/\/$/, "");
