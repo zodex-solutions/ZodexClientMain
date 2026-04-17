@@ -1,5 +1,4 @@
 import "./globals.css";
-import HeaderWrapper from "../components/common/HeaderWrapper";
 import Footer from "../components/common/Footer";
 import ColorBends from "@/components/ColorBends";
 import NextTopLoader from 'nextjs-toploader';
@@ -8,6 +7,7 @@ import NextTopLoader from 'nextjs-toploader';
 
 
 import type { Metadata, Viewport } from 'next'
+import ZHeader from "../components/common/ZHeader";
 
 // Viewport settings ke liye alag se export karein
 export const viewport: Viewport = {
@@ -35,7 +35,7 @@ export default function RootLayout({
           overflow-x-hidden  w-full
           `}
       >
-        <HeaderWrapper />
+        <ZHeader />
           <div className="fixed inset-0 z-0">
         <ColorBends
           colors={["#f97316", "#ea580c"]}

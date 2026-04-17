@@ -23,7 +23,7 @@ const CtaButton = ({ glass }: { glass: boolean }) => (
   </a>
 );
 
-export default function ZHeader({ showHeader }: Props) {
+export default function ZHeader() {
   const [showGlass, setShowGlass] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [waMessage, setWaMessage] = useState("");
@@ -55,11 +55,11 @@ export default function ZHeader({ showHeader }: Props) {
       
       {/* --- STATIC/STICKY NAV BAR --- */}
       <header className={`fixed top-0 left-0 w-full z-[60]`}>
-        <div className={`max-w-[1800px] mx-auto px-6 md:px-12 flex items-center justify-between transition-all duration-500 ${showGlass ? 'bg-zinc-100 py-2.5' : 'bg-transparent py-10' }`}>
+        <div className={`max-w-[1800px] mx-auto px-6 md:px-12 flex items-center justify-between transition-all duration-300 ${showGlass ? 'bg-zinc-100 py-2.5' : 'bg-transparent py-10' }`}>
            
           <div className="flex items-center gap-8 z-10">
-            <a href="#portfolio"  className={`${showGlass ? 'text-zinc-900 font-medium' : 'text-zinc-100 font-normal'} cursor-pointer text-[13px] uppercase tracking-tight hover:text-orange-500 transition-colors`}>Portfolio</a>
             <a href="#innovation"  className={`${showGlass ? 'text-zinc-900 font-medium' : 'text-zinc-100 font-normal'} cursor-pointer text-[13px] uppercase tracking-tight hover:text-orange-500 transition-colors`}>Innovation</a>
+            <a href="#portfolio"  className={`${showGlass ? 'text-zinc-900 font-medium' : 'text-zinc-100 font-normal'} cursor-pointer text-[13px] uppercase tracking-tight hover:text-orange-500 transition-colors`}>Portfolio</a>
           </div>
 
           <div className="absolute left-1/2 -translate-x-1/2 cursor-pointer" onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}>
@@ -76,10 +76,10 @@ export default function ZHeader({ showHeader }: Props) {
         </div>
 
         {/* --- INVERTED CURVES --- */}
-        <div className={`transition-all duration-500 ease-in-out absolute left-0 top-full w-8 h-8 pointer-events-none ${!showGlass ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}>
+        <div className={`transition-all duration-300 ease-in-out absolute left-0 top-full w-8 h-8 pointer-events-none ${!showGlass ? "-translate-y-50 opacity-0" : "translate-y-0 opacity-100"}`}>
           <svg viewBox="0 0 100 100" className="w-full h-full fill-zinc-100"><path d="M 100 0 L 0 0 L 0 100 A 100 100 0 0 1 100 0 Z" /></svg>
         </div>
-        <div className={`transition-all duration-500 ease-in-out absolute -right-[.5px] top-full w-8 h-8 pointer-events-none ${!showGlass ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100"}`}>
+        <div className={`transition-all duration-300 ease-in-out absolute -right-[.5px] top-full w-8 h-8 pointer-events-none ${!showGlass ? "-translate-y-50 opacity-0" : "translate-y-0 opacity-100"}`}>
           <svg viewBox="0 0 100 100" className="w-full h-full fill-zinc-100"><path d="M 0 0 L 100 0 L 100 100 A 100 100 0 0 0 0 0 Z" /></svg>
         </div>
       </header>
